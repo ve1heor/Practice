@@ -7,12 +7,10 @@
         <servlet-name>Redirect</servlet-name>
         <servlet-class>Calculator</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>Redirect</servlet-name>
         <url-pattern>/result</url-pattern>
     </servlet-mapping>
-
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
