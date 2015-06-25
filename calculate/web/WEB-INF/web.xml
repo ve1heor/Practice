@@ -10,7 +10,7 @@
 
     <servlet-mapping>
         <servlet-name>Redirect</servlet-name>
-        <url-pattern>/result</url-pattern>
+        <url-pattern>/Result</url-pattern>
     </servlet-mapping>
 
     <welcome-file-list>

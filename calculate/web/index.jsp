@@ -10,21 +10,31 @@
 <html>
 <head>
     <title></title>
-    <script></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js" type="text/javascript"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <style>
+        table, th, td{border: 1px solid #333;}
+    </style>
 </head>
     <body>
-    <form action="/result" method="post">
+    <form id="myAjaxRequestForm">
         <p>Введите число:</p>
-        <p><input name="value" type="text" value="0.0" /></p>
+        <p><input id="value" name="value" type="text" value="0.0" pattern="\d+(\.\d{12})?"/></p>
         <p>
-            <input name="plus" type="submit" value="+" />
-            <input name="minus" type="submit" value="-" />
+            <input name="plus" id="bPlus" type="button" value="+" />
+            <input name="minus" id="bMinus" type="button" value="-" />
 
-            <input name="divide" type="submit" value="/" />
-            <input name="multiply" type="submit" value="*" />
+            <input name="divide" id="bDivide" type="button" value="/"/>
+            <input name="multiply" id="bMultiply" type="button" value="*" />
+            <input name="clear" id="bClear" type="button" value="C" />
         </p>
         <p>Результат:</p>
-        <p><input name="result" readonly="readonly" type="text" value="<c:out value="${value1}"/>" /></p>
+        <p><input id="result" name="result" readonly="readonly" type="text" value="<c:out value="${value}" default="0.0"/>" /></p>
+    </form>
+    <form id="anotherSection">
+        <label for="ajaxResponse"/>Прошлые результаты:</label>
+        <p><div id="ajaxResponse"/></p>
     </form>
     </body>
 </html>
