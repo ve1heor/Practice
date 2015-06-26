@@ -13,9 +13,9 @@
     <script></script>
 </head>
     <body>
-    <form action="/result" method="post">
-        <p>Введите число:</p>
-        <p><input name="value" type="text" value="0.0" /></p>
+    <form action="result" method="post">
+        <label for="value">Введите число:</label>
+        <p><input  id="value" name="value" type="text" value="0.0" /></p>
         <p>
             <input name="plus" type="submit" value="+" />
             <input name="minus" type="submit" value="-" />
@@ -23,8 +23,8 @@
             <input name="divide" type="submit" value="/" />
             <input name="multiply" type="submit" value="*" />
         </p>
-        <p>Результат:</p>
-        <p><input name="result" readonly="readonly" type="text" value="<c:out value="${value1}"/>" /></p>
+        <label for="result">Результат:</label>
+        <p><input id="result" name="result" readonly="readonly" type="text" value="<c:out value="${value1}"/>" /></p>
     </form>
     </body>
 </html>

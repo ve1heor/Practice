@@ -10,7 +10,6 @@ import java.util.Map;
  * Servlet implementation class Calculator
  */
 public class Calculator extends HttpServlet {
-    private static int count = 0;
 
     public Calculator() {
         super();
