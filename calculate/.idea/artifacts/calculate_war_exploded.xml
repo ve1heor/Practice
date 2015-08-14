@@ -7,7 +7,6 @@
         <element id="directory" name="classes">
           <element id="module-output" name="Calculator" />
         </element>
-        <element id="directory" name="lib" />
       </element>
     </root>
   </artifact>
