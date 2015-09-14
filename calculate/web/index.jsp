@@ -20,7 +20,7 @@
     <body>
     <form id="myAjaxRequestForm">
         <p>Введите число:</p>
-        <p><input id="value" name="value" type="text" value="0.0" pattern="\d+(\.\d{12})?"/></p>
+        <p><input id="value" name="value" type="number" value="0.0" pattern="\d+(\.\d{12})?"/></p>
         <p>
             <input name="plus" id="bPlus" type="button" value="+" />
             <input name="minus" id="bMinus" type="button" value="-" />
