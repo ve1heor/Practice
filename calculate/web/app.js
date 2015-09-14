@@ -116,7 +116,7 @@ $(document).ready(function() {
             data: {
                 "value":value,
                 "result":result,
-                "devide":"sign"
+                "divide":"sign"
             },
             dataType: "json",
 
