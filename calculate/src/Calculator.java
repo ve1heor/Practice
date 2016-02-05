@@ -75,7 +75,7 @@ public class Calculator extends HttpServlet {
                 String cinDate = dformat.format(Calendar.getInstance().getTime());
                 try {
                     Class.forName ( "org.postgresql.Driver");
-                    Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/calculator","postgres","nc4o75rvr493");
+                    Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/calculator","postgres","sqwertle");
                     st = con.createStatement();
                     String old = String.valueOf(oldres);
                     String res = null;
