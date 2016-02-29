@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>JSF Calculator</title>
+</h:head>
+<h:body>
+	<h2>Calculatar:</h2>
+	<h:form>
+		Введите два числа:<p/>
+		<h:inputText id="first" value="#{userData.first}"></h:inputText><p/>
+		<h:inputText id="second" value="#{userData.second}"></h:inputText><p/>
+		<h:commandButton value="+" actionListener="#{userData.addition}">
+			<f:ajax execute="first second" render="outputMessage" />
+		</h:commandButton>
+		<h:commandButton value="-" actionListener="#{userData.subtraction}">
+			<f:ajax execute="first second" render="outputMessage" />
+		</h:commandButton>
+		<h:commandButton value="*" actionListener="#{userData.multiply}">
+			<f:ajax execute="first second" render="outputMessage" />
+		</h:commandButton>
+		<h:commandButton value="/" actionListener="#{userData.divide}">
+			<f:ajax execute="first second" render="outputMessage" />
+		</h:commandButton>
+		<p/>Результат:<p/>
+		<h2><h:outputText id="outputMessage"
+			value="#{userData.result}"/></h2>
+	</h:form>
+</h:body>
+</html>
