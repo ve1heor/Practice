@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:h="http://java.sun.com/jsf/html"
-	  xmlns:f="http://java.sun.com/jsf/core">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:ui="http://java.sun.com/jsf/facelets"
+				xmlns:h="http://java.sun.com/jsf/html"
+				xmlns:f="http://java.sun.com/jsf/core"
+				xmlns:a4j="http://richfaces.org/a4j"
+				xmlns:r="http://richfaces.org/rich">
 <h:head>
 	<h:outputStylesheet library="css" name="table-style.css"/>
 	<title>JSF Calculator</title>
@@ -14,38 +14,38 @@
 		Введите два числа:<p/>
 		<h:inputText id="first" value="#{userData.first}"></h:inputText><p/>
 		<h:inputText id="second" value="#{userData.second}"></h:inputText><p/>
-		<h:commandButton value="+" actionListener="#{userData.addition}">
-			<f:ajax execute="first second" render="result oldresult" />
-		</h:commandButton>
-		<h:commandButton value="-" actionListener="#{userData.subtraction}">
-			<f:ajax execute="first second" render="result oldresult" />
-		</h:commandButton>
-		<h:commandButton value="*" actionListener="#{userData.multiply}">
-			<f:ajax execute="first second" render="result oldresult" />
-		</h:commandButton>
-		<h:commandButton value="/" actionListener="#{userData.divide}">
-			<f:ajax execute="first second" render="result oldresult" />
-		</h:commandButton>
+		<a4j:commandButton value="+" actionListener="#{userData.addition}">
+			<a4j:ajax execute="first second" render="result oldresult" />
+		</a4j:commandButton>
+		<a4j:commandButton value="-" actionListener="#{userData.subtraction}">
+			<a4j:ajax execute="first second" render="result oldresult" />
+		</a4j:commandButton>
+		<a4j:commandButton value="*" actionListener="#{userData.multiply}">
+			<a4j:ajax execute="first second" render="result oldresult" />
+		</a4j:commandButton>
+		<a4j:commandButton value="/" actionListener="#{userData.divide}">
+			<a4j:ajax execute="first second" render="result oldresult" />
+		</a4j:commandButton>
 		<p/>Результат:<p/>
 		<h2><h:outputText id="result"
 			value="#{userData.result}"/></h2>
 		<p/>Предыдущие результаты:<p/>
-		<h:dataTable border="2" id="oldresult" value="#{userData.list}" var="item"
+		<r:dataTable border="2" id="oldresult" value="#{userData.list}" var="item"
 					 styleClass="order-table"
 					 headerClass="order-table-header">
-			  <h:column>
+			  <r:column>
 				<f:facet name="header">Выражение</f:facet>
 			    #{item.exp}
-			  </h:column>
-			  <h:column>
+			  </r:column>
+			  <r:column>
 				  <f:facet name="header">Результат</f:facet>
 			    #{item.result}
-			  </h:column>
-			  <h:column>
+			  </r:column>
+			  <r:column>
 				  <f:facet name="header">Дата</f:facet>
 				#{item.date}
-			  </h:column>
-		</h:dataTable>
+			  </r:column>
+		</r:dataTable>
 	</h:form>
 </h:body>
-</html>
+</ui:composition>
