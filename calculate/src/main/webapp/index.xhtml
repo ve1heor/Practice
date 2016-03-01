@@ -5,29 +5,47 @@
 	  xmlns:h="http://java.sun.com/jsf/html"
 	  xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
+	<h:outputStylesheet library="css" name="table-style.css"/>
 	<title>JSF Calculator</title>
 </h:head>
-<h:body>
-	<h2>Calculatar:</h2>
-	<h:form>
+<h:body onload="#{userData.init()}">
+	<h2>Calculator:</h2>
+	<h:form >
 		Введите два числа:<p/>
 		<h:inputText id="first" value="#{userData.first}"></h:inputText><p/>
 		<h:inputText id="second" value="#{userData.second}"></h:inputText><p/>
 		<h:commandButton value="+" actionListener="#{userData.addition}">
-			<f:ajax execute="first second" render="outputMessage" />
+			<f:ajax execute="first second" render="result oldresult" />
 		</h:commandButton>
 		<h:commandButton value="-" actionListener="#{userData.subtraction}">
-			<f:ajax execute="first second" render="outputMessage" />
+			<f:ajax execute="first second" render="result oldresult" />
 		</h:commandButton>
 		<h:commandButton value="*" actionListener="#{userData.multiply}">
-			<f:ajax execute="first second" render="outputMessage" />
+			<f:ajax execute="first second" render="result oldresult" />
 		</h:commandButton>
 		<h:commandButton value="/" actionListener="#{userData.divide}">
-			<f:ajax execute="first second" render="outputMessage" />
+			<f:ajax execute="first second" render="result oldresult" />
 		</h:commandButton>
 		<p/>Результат:<p/>
-		<h2><h:outputText id="outputMessage"
+		<h2><h:outputText id="result"
 			value="#{userData.result}"/></h2>
+		<p/>Предыдущие результаты:<p/>
+		<h:dataTable border="2" id="oldresult" value="#{userData.list}" var="item"
+					 styleClass="order-table"
+					 headerClass="order-table-header">
+			  <h:column>
+				<f:facet name="header">Выражение</f:facet>
+			    #{item.exp}
+			  </h:column>
+			  <h:column>
+				  <f:facet name="header">Результат</f:facet>
+			    #{item.result}
+			  </h:column>
+			  <h:column>
+				  <f:facet name="header">Дата</f:facet>
+				#{item.date}
+			  </h:column>
+		</h:dataTable>
 	</h:form>
 </h:body>
 </html>

@@ -4,7 +4,7 @@
   http://maven.apache.org/maven-v4_0_0.xsd">
   
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.mkyong.common</groupId>
+  <groupId>absurd</groupId>
   <artifactId>JavaServerFaces</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
@@ -37,7 +37,18 @@
           <version>3.0.0</version>
       </dependency>
 
- 
+      <dependency>
+          <groupId>org.postgresql</groupId>
+          <artifactId>postgresql</artifactId>
+          <version>9.4-1201-jdbc41</version>
+      </dependency>
+
+      <dependency>
+          <groupId>org.w3c.css</groupId>
+          <artifactId>sac</artifactId>
+          <version>1.3</version>
+      </dependency>
+
   </dependencies>
 
   <build>
