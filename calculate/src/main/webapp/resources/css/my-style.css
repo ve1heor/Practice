@@ -1,0 +1,61 @@
+.root-template-block {
+    height: 600px;
+}
+
+.my-header {
+    color: #161731;
+    background-image: url("/resources/images/H7.jpg");
+    background-size: contain;
+    background-repeat: repeat;
+    height: 100px;
+}
+.my-footer {
+    background-image: url("/resources/images/H7.jpg");
+    background-size: contain;
+    background-repeat: repeat;
+    height: 100px;
+}
+
+.header-content{
+    text-align:center;
+}
+
+.my-content {
+    text-align:center;
+    width: 594px;
+    margin-top: 4px;
+    height: 450px;
+    border: 1px #000000 solid;
+    background: #80afe7;
+}
+
+.my-right-menu {
+    margin-left: 600px;
+    margin-top: -452px;
+    height: 450px;
+    border: 1px #000000 solid;
+    background: #80afe7;
+}
+.button-addition {
+     height: 80px;
+     width: 80px;
+     font-weight: bold;
+ }
+.button-subtraction {
+    height: 80px;
+    width: 80px;
+    font-weight: bold;
+}
+.button-multiply {
+    height: 80px;
+    width: 80px;
+    font-weight: bold;
+}
+.button-divide {
+    height: 80px;
+    width: 80px;
+    font-weight: bold;
+}
+.index-form {
+    font-family: "Lucida Sans Unicode"
+}

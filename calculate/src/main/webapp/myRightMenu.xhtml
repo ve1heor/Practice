@@ -1,0 +1,26 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:r="http://richfaces.org/rich">
+    <h:form styleClass="index-form">
+        <div align="center">
+        <p/>Предыдущие результаты:<p/>
+        <r:dataTable border="2" id="oldresult" value="#{userData.list}" var="item"
+                     styleClass="order-table"
+                columnClasses="order-table-column">
+            <r:column headerClass="order-table-header">
+                <f:facet name="header">Выражение</f:facet>
+                #{item.exp}
+            </r:column>
+            <r:column headerClass="order-table-header">
+                <f:facet name="header">Результат</f:facet>
+                #{item.result}
+            </r:column>
+            <r:column headerClass="order-table-header">
+                <f:facet name="header">Дата</f:facet>
+                #{item.date}
+            </r:column>
+        </r:dataTable>
+        </div>
+    </h:form>
+</ui:composition>

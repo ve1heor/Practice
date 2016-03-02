@@ -1,51 +1,36 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-				xmlns:ui="http://java.sun.com/jsf/facelets"
-				xmlns:h="http://java.sun.com/jsf/html"
-				xmlns:f="http://java.sun.com/jsf/core"
-				xmlns:a4j="http://richfaces.org/a4j"
-				xmlns:r="http://richfaces.org/rich">
-<h:head>
-	<h:outputStylesheet library="css" name="table-style.css"/>
-	<title>JSF Calculator</title>
-</h:head>
-<h:body onload="#{userData.init()}">
-	<h2>Calculator:</h2>
-	<h:form >
-		Введите два числа:<p/>
-		<h:inputText id="first" value="#{userData.first}"></h:inputText><p/>
-		<h:inputText id="second" value="#{userData.second}"></h:inputText><p/>
-		<a4j:commandButton value="+" actionListener="#{userData.addition}">
-			<a4j:ajax execute="first second" render="result oldresult" />
-		</a4j:commandButton>
-		<a4j:commandButton value="-" actionListener="#{userData.subtraction}">
-			<a4j:ajax execute="first second" render="result oldresult" />
-		</a4j:commandButton>
-		<a4j:commandButton value="*" actionListener="#{userData.multiply}">
-			<a4j:ajax execute="first second" render="result oldresult" />
-		</a4j:commandButton>
-		<a4j:commandButton value="/" actionListener="#{userData.divide}">
-			<a4j:ajax execute="first second" render="result oldresult" />
-		</a4j:commandButton>
-		<p/>Результат:<p/>
-		<h2><h:outputText id="result"
-			value="#{userData.result}"/></h2>
-		<p/>Предыдущие результаты:<p/>
-		<r:dataTable border="2" id="oldresult" value="#{userData.list}" var="item"
-					 styleClass="order-table"
-					 headerClass="order-table-header">
-			  <r:column>
-				<f:facet name="header">Выражение</f:facet>
-			    #{item.exp}
-			  </r:column>
-			  <r:column>
-				  <f:facet name="header">Результат</f:facet>
-			    #{item.result}
-			  </r:column>
-			  <r:column>
-				  <f:facet name="header">Дата</f:facet>
-				#{item.date}
-			  </r:column>
-		</r:dataTable>
-	</h:form>
-</h:body>
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:a4j="http://richfaces.org/a4j"
+                template="mainTemplate.xhtml">
+
+    <ui:define name="content">
+        <h:head>
+            <h:outputStylesheet library="css" name="table-style.css"/>
+            <title>JSF Calculator</title>
+        </h:head>
+        <h:body onload="#{userData.init()}">
+
+        <h:form styleClass="index-form">
+            Введите два числа:<p/>
+            <h:inputText styleClass="input-field" id="first" value="#{userData.first}"></h:inputText><p/>
+            <h:inputText styleClass="input-field" id="second" value="#{userData.second}"></h:inputText><p/>
+            <h:commandButton styleClass="button-addition" value="+" actionListener="#{userData.addition}">
+                <a4j:ajax execute="first second" render="result oldresult" />
+            </h:commandButton>
+            <h:commandButton styleClass="button-subtraction" value="-" actionListener="#{userData.subtraction}">
+                <a4j:ajax execute="first second" render="result oldresult" />
+            </h:commandButton>
+            <h:commandButton styleClass="button-multiply" value="*" actionListener="#{userData.multiply}">
+                <a4j:ajax execute="first second" render="result oldresult" />
+            </h:commandButton>
+            <h:commandButton styleClass="button-divide" value="/" actionListener="#{userData.divide}">
+                <a4j:ajax execute="first second" render="result oldresult" />
+            </h:commandButton>
+            <p/>Результат:<p/>
+            <h2><h:outputText id="result" value="#{userData.result}"/></h2>
+        </h:form>
+        </h:body>
+    </ui:define>
+
 </ui:composition>

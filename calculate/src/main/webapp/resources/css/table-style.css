@@ -1,9 +1,22 @@
 .order-table{
-    border-collapse:collapse;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 14px;
+    border-collapse: collapse;
+    text-align: center;;
 }
 
 .order-table-header{
-    text-align:center;
-    background:none repeat scroll 0 0 #E5E5E5;
-    padding:16px;
+    background: #5579a0;
+    color: white;
+}
+
+.order-table-column
+{
+    width: 40px;
+    background: #D8E6F3;
+    padding: 10px 20px;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    border-color: white;
+
 }
